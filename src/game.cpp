@@ -4,7 +4,7 @@
 #include "../include/headers/enemy_skeleton.h"
 #include "../include/headers/texture_manager.h"
 #include "../include/headers/enemy_generator.h"
-#include "../include/headers/player_skill_q.h"
+
 #include "../include/headers/player_skill_e.h"
 #include "../include/headers/arrow_direction.h"
 
@@ -20,7 +20,7 @@ Game::~Game() {}
 
 WorldMap *map;
 PlayerManager *player;
-PlayerSkillQ *player_skill_q;
+
 PlayerSkillE *player_skill_e;
 ArrowDirection *arrow_direction;
 EnemyGenerator *enemy_generator;
@@ -32,7 +32,7 @@ void Game::Init()
 {
     is_running = true;
     player = new PlayerManager("img/player/player.png", 365, 300);
-    player_skill_q = new PlayerSkillQ();
+    
     player_skill_e = new PlayerSkillE();
     arrow_direction = new ArrowDirection();
     enemy_generator = new EnemyGenerator();
@@ -65,7 +65,7 @@ void Game::Update()
     map->UpdateMap();
     if (player->IsAlive() == false)
         is_running = false;
-    player_skill_q->Update();
+    
     player_skill_e->Update();
 
     level_manager->Update();
@@ -84,7 +84,7 @@ void Game::Render()
     enemy_generator->Render();
     
     player->stats_bar->Render();
-    player_skill_q->Render();
+    
     player_skill_e->Render();
     arrow_direction->Render();
     
@@ -271,7 +271,7 @@ void Game::Clean()
 {   
     delete map;
     delete player;
-    delete player_skill_q;
+    
     delete player_skill_e;
     delete arrow_direction;
     delete enemy_generator;

@@ -1,7 +1,7 @@
 #include "../include/headers/world_map.h"
 #include "../include/headers/player_manager.h"
 #include "../include/headers/enemy_generator.h"
-#include "../include/headers/player_skill_q.h"
+
 #include "../include/headers/player_skill_e.h"
 #include "../include/headers/arrow_direction.h"
 
@@ -166,8 +166,7 @@ Finished:;
     player->xdif += dir.first * static_cast<int>(player->transform->speed);
     player->ydif += dir.second * static_cast<int>(player->transform->speed);
 
-    if (Game::keyboard_state[SDL_SCANCODE_Q])
-        player_skill_q->ExecuteSkill(arrow_direction->dx, arrow_direction->dy);
+   
     if (Game::keyboard_state[SDL_SCANCODE_E])
         player_skill_e->ExecuteSkill();
     

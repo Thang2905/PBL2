@@ -1,6 +1,6 @@
 #include "../include/headers/level_manager.h"
 #include "../include/headers/player_manager.h"
-#include "../include/headers/player_skill_q.h"
+
 #include "../include/headers/player_skill_e.h"
 #include "../include/headers/sound_manager.h"
 LevelManager::LevelManager()
@@ -56,8 +56,7 @@ void LevelManager::LevelUp()
     player->transform->speed += static_cast<int> (cur_speed);
     cur_speed -= static_cast<int> (cur_speed);
 
-    player_skill_q->cooldown_base += static_cast<int> (cur_q_cooldown);
-    cur_q_cooldown -= static_cast<int> (cur_q_cooldown);
+    
 
     player_skill_e->duration_base += static_cast<int> (cur_e_duration);
     cur_e_duration -= static_cast<int> (cur_e_duration);
