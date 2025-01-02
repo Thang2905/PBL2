@@ -42,7 +42,7 @@ void Game::Init()
     shooter = new Shooter();
     level_manager = new LevelManager();
     boss = new Boss();
-    boss_guider = new BossGuider();
+    // boss_guider = new BossGuider();
     sound_manager = new SoundManager();
     sound_manager->PlayBGM();
 }
@@ -74,7 +74,7 @@ void Game::Update()
     level_manager->Update();
     player->stats_bar->Update();
     shooter->Update();
-    boss_guider->Update();
+    // boss_guider->Update();
 }
 void Game::Render()
 {
@@ -90,7 +90,7 @@ void Game::Render()
     player_skill_q->Render();
     player_skill_e->Render();
     arrow_direction->Render();
-    boss_guider->Render();
+    // boss_guider->Render();
     sound_manager->Render();
 
     if (Lost())
@@ -281,7 +281,7 @@ void Game::Clean()
     delete level_manager;
     delete shooter;
     delete boss;
-    delete boss_guider;
+    // delete boss_guider;
     delete sound_manager;
 }
 

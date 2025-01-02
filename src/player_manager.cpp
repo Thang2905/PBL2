@@ -12,7 +12,7 @@ PlayerManager::PlayerManager(const char *texture_file, int orig_x, int orig_y)
     health = 100;
     full_health = 100;
     xp = 0;
-    full_xp = 10;
+    full_xp = 5;
     level = 1;
     attack = 2;
     AddAnimations();

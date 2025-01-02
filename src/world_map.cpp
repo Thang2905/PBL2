@@ -185,8 +185,8 @@ Finished:;
         player_skill_q->ExecuteSkill(arrow_direction->dx, arrow_direction->dy);
     if (Game::keyboard_state[SDL_SCANCODE_E])
         player_skill_e->ExecuteSkill();
-    if (Game::keyboard_state[SDL_SCANCODE_A])
-        boss_guider->active = true;
+    // if (Game::keyboard_state[SDL_SCANCODE_A])
+    //     boss_guider->active = true;
     sound_manager->HandleToggle(Game::keyboard_state[SDL_SCANCODE_S], Game::keyboard_state[SDL_SCANCODE_D]);
 }
 void WorldMap::RenderMapFullGrass()
