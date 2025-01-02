@@ -37,8 +37,8 @@ void PlayerManager::Render()
 
 void PlayerManager::AddAnimations()
 {
-    Animation walk_right(0, 33, 21, 4, 200);
-    Animation walk_left(21, 33, 21, 4, 200);
+    Animation walk_right(0, 33, 21, 4, 200); // 4 frames, 200 ms per frame
+    Animation walk_left(21, 33, 21, 4, 200); //21 is the index of the row of the sprite sheet
     Animation sword_right(42, 33, 21, 3, 100);
     Animation sword_left(63, 33, 21, 3, 100);
     sprite->animations_map["idle_right"] = walk_right;

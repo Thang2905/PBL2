@@ -1,3 +1,5 @@
 *.exe
 .vscode/
 *.rar
+src/enemy_bat.cpp
+include/headers/enemy_bat.h

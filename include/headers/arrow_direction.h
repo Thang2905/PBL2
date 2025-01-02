@@ -17,4 +17,5 @@ public:
 private:
 };
 
+// declare global variable to use in other file
 extern ArrowDirection *arrow_direction;

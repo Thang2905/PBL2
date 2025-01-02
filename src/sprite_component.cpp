@@ -56,6 +56,7 @@ void SpriteComponent::Draw(int deltax, int deltay)
         TextureManager::Draw(texture, dest_rect);
 }
 
+
 void SpriteComponent::ApplyAnimation(const std::string &animation_name)
 {
     // 'animation_name' must be already in 'animations_map'

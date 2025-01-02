@@ -12,6 +12,7 @@ PerlinNoise::PerlinNoise(unsigned _seed)
 }
 PerlinNoise::~PerlinNoise() {}
 
+//calculate the dot product of two vectors
 float PerlinNoise::DotProduct(const vector2 &V1, const vector2 &V2)
 {
     return V1.first * V2.first + V1.second * V2.second;

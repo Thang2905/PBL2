@@ -259,6 +259,7 @@ void Game::RenderGuide()
     SDL_RenderPresent(renderer);
 }
 
+//change condition to win game
 bool Game::Won()
 {
     return !boss->IsAlive();

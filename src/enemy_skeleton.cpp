@@ -59,7 +59,7 @@ void EnemySkeleton::Update()
                 }
 
             }
-        } else 
+        } else //if (IsNearPlayer()) // Let's move to player
         {
             if (--move_duration == 0)
             {
@@ -77,7 +77,7 @@ void EnemySkeleton::Update()
                     else if (transform->y - player->ydif + 5 > 300)  
                         dy = -1;
                     else dy = 0;
-                } else 
+                } else //if not near player move randomly
                 {
                     move_duration = 50;
                     transform->speed = 1;
