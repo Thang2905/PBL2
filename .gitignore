@@ -13,6 +13,7 @@ src/shooter.cpp
 include/headers/shooter.h
 src/bullet.cpp
 include/headers/bullet.h
+main
 
 
 
