@@ -4,8 +4,8 @@
 #include "../include/headers/player_skill_q.h"
 #include "../include/headers/player_skill_e.h"
 #include "../include/headers/arrow_direction.h"
-#include "../include/headers/boss.h"
-#include "../include/headers/boss_guider.h"
+// #include "../include/headers/boss.h"
+// #include "../include/headers/boss_guider.h"
 #include "../include/headers/sound_manager.h"
 WorldMap::WorldMap()
 {
@@ -76,21 +76,21 @@ void WorldMap::UpdateMap()
                 e->DecHealth(player->attack);
             }
         }
-        if (boss->IsInsideActiveZone())
-        {
-            int x0 = boss->transform->x - player->xdif + 20; // x0 = boss x - player x + 20
-            int y0 = boss->transform->y - player->ydif + 30; // y0 = boss y - player y + 30
-            int x1 = x0 + 50;
-            int y1 = y0 + 60;
-            if (player->direction && player->CollideSwordRight(x0, y0, x1, y1))
-            {
-                boss->DecHealth(player->attack);
-            }
-            else if (!player->direction && player->CollideSwordLeft(x0, y0, x1, y1))
-            {
-                boss->DecHealth(player->attack);
-            }
-        }
+        // if (boss->IsInsideActiveZone())
+        // {
+        //     int x0 = boss->transform->x - player->xdif + 20; // x0 = boss x - player x + 20
+        //     int y0 = boss->transform->y - player->ydif + 30; // y0 = boss y - player y + 30
+        //     int x1 = x0 + 50;
+        //     int y1 = y0 + 60;
+        //     if (player->direction && player->CollideSwordRight(x0, y0, x1, y1))
+        //     {
+        //         boss->DecHealth(player->attack);
+        //     }
+        //     else if (!player->direction && player->CollideSwordLeft(x0, y0, x1, y1))
+        //     {
+        //         boss->DecHealth(player->attack);
+        //     }
+        // }
         sound_manager->PlaySlash();
         return;
     }
@@ -249,7 +249,7 @@ void WorldMap::RenderMap()
 
 bool WorldMap::InsideGrassZone(int x, int y)
 {
-    return player->IsInsideStartingZone(x, y) || boss->IsInsideStartingZone(x, y);
+    return player->IsInsideStartingZone(x, y);
 }
 
 bool WorldMap::IsValidMove(const std::pair<int, int> &dir)

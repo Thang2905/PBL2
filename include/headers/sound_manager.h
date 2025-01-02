@@ -13,9 +13,9 @@ public:
     void PlayShoot();
     void PlaySlash();
     void PlayPlayerDamaged();
-    void PlayBossBGM();
+    // void PlayBossBGM();
     void PlayBGM();
-    bool IsPlayingBossBGM();
+    // bool IsPlayingBossBGM();
     void Toggle(int ty);
     void Render();
     void HandleToggle(bool press_K, bool press_L);

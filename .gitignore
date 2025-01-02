@@ -3,3 +3,17 @@
 *.rar
 src/enemy_bat.cpp
 include/headers/enemy_bat.h
+include/headers/boss_guider.h
+include/headers/boss.h
+src/boss.cpp
+src/boss_guider.cpp
+src/fire_tile.cpp
+include/headers/fire_tile.h
+src/shooter.cpp
+include/headers/shooter.h
+src/bullet.cpp
+include/headers/bullet.h
+
+
+
+

@@ -23,15 +23,15 @@ Boss::Boss()
     rage_mode_cooldown = 0;
     rage_mode_duration = 0;
 
-    skill_fire.fire_tiles.assign(skill_fire.number, NULL);
-    for (int i = 0; i < skill_fire.number; i++)
-        skill_fire.fire_tiles[i] = new FireTile(skill_fire.damage, 0);
+    // skill_fire.fire_tiles.assign(skill_fire.number, NULL);
+    // for (int i = 0; i < skill_fire.number; i++)
+    //     skill_fire.fire_tiles[i] = new FireTile(skill_fire.damage, 0);
 }
 
 Boss::~Boss() 
 {
-    for (FireTile *&f : skill_fire.fire_tiles)
-        delete f;
+    // for (FireTile *&f : skill_fire.fire_tiles)
+    //     {delete f;}
     delete sprite;
     delete transform;
     delete health_bar;
@@ -39,8 +39,8 @@ Boss::~Boss()
 
 void Boss::Update()
 {
-    for (FireTile *&f : skill_fire.fire_tiles)
-        f->Update();
+//     for (FireTile *&f : skill_fire.fire_tiles)
+// {f->Update();}
 
     if (!IsInsideActiveZone() || !IsAlive()) 
         return;
@@ -80,11 +80,11 @@ void Boss::Render()
     sprite->Draw(-player->xdif, -player->ydif);
     health_bar->Draw(-player->xdif, -player->ydif);
 }
-void Boss::RenderFire()
-{
-    for (FireTile *&f : skill_fire.fire_tiles)
-        f->Render();
-}
+// void Boss::RenderFire()
+// {
+//     for (FireTile *&f : skill_fire.fire_tiles)
+//         f->Render();
+// }
 bool Boss::IsInsideStartingZone(int x, int y)
 {
     int X = (x + player->xdif) - start_x;
@@ -155,11 +155,11 @@ void Boss::ExecuteTeleport()
     transform->x = (rand() % 450) - 225 + start_x;
     transform->y = (rand() % 450) - 225 + start_y;
 }
-void Boss::ExecuteFirewall()
-{
-    for (FireTile *&f : skill_fire.fire_tiles)
-        f->Reset(skill_fire.damage, skill_fire.duration);
-}
+// void Boss::ExecuteFirewall()
+// {
+//     for (FireTile *&f : skill_fire.fire_tiles)
+//         f->Reset(skill_fire.damage, skill_fire.duration);
+// }
 void Boss::ExecuteShootFireBall()
 {
     skill_shoot.duration = 500;

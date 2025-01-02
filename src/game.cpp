@@ -9,8 +9,7 @@
 #include "../include/headers/arrow_direction.h"
 #include "../include/headers/shooter.h"
 #include "../include/headers/level_manager.h"
-#include "../include/headers/boss.h"
-#include "../include/headers/boss_guider.h"
+
 #include "../include/headers/sound_manager.h"
 
 
@@ -27,8 +26,7 @@ ArrowDirection *arrow_direction;
 EnemyGenerator *enemy_generator;
 LevelManager *level_manager;
 Shooter *shooter;
-Boss *boss;
-BossGuider *boss_guider;
+
 SoundManager *sound_manager;
 void Game::Init()
 {
@@ -41,8 +39,7 @@ void Game::Init()
     map = new WorldMap();
     shooter = new Shooter();
     level_manager = new LevelManager();
-    boss = new Boss();
-    // boss_guider = new BossGuider();
+    
     sound_manager = new SoundManager();
     sound_manager->PlayBGM();
 }
@@ -70,27 +67,27 @@ void Game::Update()
         is_running = false;
     player_skill_q->Update();
     player_skill_e->Update();
-    boss->Update();
+
     level_manager->Update();
     player->stats_bar->Update();
     shooter->Update();
-    // boss_guider->Update();
+    
 }
 void Game::Render()
 {
     SDL_RenderClear(renderer);
     // Render something here
     map->RenderMap();
-    boss->RenderFire();
+    
     player->Render();
     shooter->Render();
     enemy_generator->Render();
-    boss->Render();
+    
     player->stats_bar->Render();
     player_skill_q->Render();
     player_skill_e->Render();
     arrow_direction->Render();
-    // boss_guider->Render();
+    
     sound_manager->Render();
 
     if (Lost())
@@ -264,7 +261,7 @@ void Game::RenderGuide()
 bool Game::Won()
 {
     return level_manager->getLevel() == 2;   
-    // return !boss->IsAlive();
+    
 }
 bool Game::Lost()
 {
@@ -280,8 +277,7 @@ void Game::Clean()
     delete enemy_generator;
     delete level_manager;
     delete shooter;
-    delete boss;
-    // delete boss_guider;
+   
     delete sound_manager;
 }
 

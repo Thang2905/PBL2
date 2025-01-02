@@ -2,9 +2,9 @@
 #include "../include/headers/texture_manager.h"
 SoundManager::SoundManager()
 {
-    is_playing_boss_bgm = false;
-    bgm = Mix_LoadMUS("sfx-bgm/bgm.wav");
-    boss_bgm = Mix_LoadMUS("sfx-bgm/boss_bgm.wav");
+    // is_playing_boss_bgm = false;
+    // bgm = Mix_LoadMUS("sfx-bgm/bgm.wav");
+    // boss_bgm = Mix_LoadMUS("sfx-bgm/boss_bgm.wav");
 
     level_up = Mix_LoadWAV("sfx-bgm/level_up.wav");
     monster_appear = Mix_LoadWAV("sfx-bgm/monster_appear.wav");
@@ -28,7 +28,7 @@ SoundManager::~SoundManager()
 {
     Mix_HaltMusic();
     Mix_FreeMusic(bgm);
-    Mix_FreeMusic(boss_bgm);
+    // Mix_FreeMusic(boss_bgm);
 
     Mix_FreeChunk(level_up);
     Mix_FreeChunk(monster_appear);
@@ -86,26 +86,26 @@ void SoundManager::PlayPlayerDamaged()
         return;
     Mix_PlayChannel(-1, player_damaged, 0);
 }
-void SoundManager::PlayBossBGM()
-{
-    if (!is_bgm_on)
-        return;
-    is_playing_boss_bgm = true;
-    Mix_HaltMusic();
-    Mix_PlayMusic(boss_bgm, -1);
-}
+// void SoundManager::PlayBossBGM()
+// {
+//     if (!is_bgm_on)
+//         return;
+//     is_playing_boss_bgm = true;
+//     Mix_HaltMusic();
+//     Mix_PlayMusic(boss_bgm, -1);
+// }
 void SoundManager::PlayBGM()
 {
     if (!is_bgm_on)
         return;
-    is_playing_boss_bgm = false;
+    // is_playing_boss_bgm = false;
     Mix_HaltMusic();
     Mix_PlayMusic(bgm, -1);
 }
-bool SoundManager::IsPlayingBossBGM()
-{
-    return is_playing_boss_bgm;
-}
+// bool SoundManager::IsPlayingBossBGM()
+// {
+//     return is_playing_boss_bgm;
+// }
 void SoundManager::Render()
 {
     if (duration > 0)
@@ -125,14 +125,14 @@ void SoundManager::Toggle(int ty)
             Mix_HaltMusic();
             current = bgm_off;
         }
-        else 
-        {
-            if (is_playing_boss_bgm)
-                PlayBossBGM();
-            else 
-                PlayBGM();
-            current = bgm_on;
-        }
+        // else 
+        // {
+        //     if (is_playing_boss_bgm)
+        //         PlayBossBGM();
+        //     else 
+        //         PlayBGM();
+        //     current = bgm_on;
+        // }
     } else 
     {
         is_sfx_on ^= 1;

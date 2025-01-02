@@ -1,7 +1,7 @@
 #pragma once
 #include "transform_component.h"
 #include "sprite_component.h"
-#include "fire_tile.h"
+// #include "fire_tile.h"
 #include <vector>
 #include "enemy_health_bar.h"
 class Boss
@@ -13,7 +13,7 @@ public:
     bool IsInsideStartingZone(int x, int y);
     void Update();
     void Render();
-    void RenderFire();
+    // void RenderFire();
     void DecHealth(int v);
     bool IsInsideActiveZone();
     bool IsInsideMusicZone();
@@ -25,7 +25,7 @@ private:
     void ExecuteSkill();
     void AddAnimations();
     void ExecuteTeleport();
-    void ExecuteFirewall();
+    // void ExecuteFirewall();
     void ExecuteShootFireBall();
     void ExecuteSpawnMonster();
     void ExecuteRageMode();
@@ -57,7 +57,7 @@ private:
         int damage = 3;
         int duration = 700;   
         int number = 40;
-        std::vector<FireTile*> fire_tiles;
+        // std::vector<FireTile*> fire_tiles;
     } skill_fire;
 
     struct 
