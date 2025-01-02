@@ -5,9 +5,11 @@ class LevelManager
 public:
     LevelManager();
     ~LevelManager();
+    int getLevel();
 
     void Update();
 private:
+    int level = 1;
     void LevelUp();
     double delta_hp, cur_hp;
     double delta_xp, cur_xp;

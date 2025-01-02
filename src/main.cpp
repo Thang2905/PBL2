@@ -152,7 +152,8 @@ int PlayGame()
         if (game->Won())
             break;
         frame_time = SDL_GetTicks() - frame_start;
-        if (frame_time < FRAME_MAX_DELAY)
+        // Delay for each frame
+        if (frame_time < FRAME_MAX_DELAY) //check if the frame time is less than the max delay
         {
             SDL_Delay(FRAME_MAX_DELAY - frame_time);
         }

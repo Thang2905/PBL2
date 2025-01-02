@@ -29,8 +29,13 @@ void LevelManager::Update()
         LevelUp();
     }
 }
+int LevelManager::getLevel()
+{
+    return level;
+}
 void LevelManager::LevelUp()
 {
+    level++;
     cur_hp += delta_hp;
     cur_xp += delta_xp;
     cur_attack += delta_attack;

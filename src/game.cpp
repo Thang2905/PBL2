@@ -13,6 +13,7 @@
 #include "../include/headers/boss_guider.h"
 #include "../include/headers/sound_manager.h"
 
+
 SDL_Renderer *Game::renderer = nullptr;
 SDL_Window *Game::window = nullptr;
 Game::Game() {}
@@ -262,7 +263,8 @@ void Game::RenderGuide()
 //change condition to win game
 bool Game::Won()
 {
-    return !boss->IsAlive();
+    return level_manager->getLevel() == 2;   
+    // return !boss->IsAlive();
 }
 bool Game::Lost()
 {
