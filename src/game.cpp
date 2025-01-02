@@ -7,7 +7,7 @@
 #include "../include/headers/player_skill_q.h"
 #include "../include/headers/player_skill_e.h"
 #include "../include/headers/arrow_direction.h"
-#include "../include/headers/shooter.h"
+
 #include "../include/headers/level_manager.h"
 
 #include "../include/headers/sound_manager.h"
@@ -25,7 +25,7 @@ PlayerSkillE *player_skill_e;
 ArrowDirection *arrow_direction;
 EnemyGenerator *enemy_generator;
 LevelManager *level_manager;
-Shooter *shooter;
+
 
 SoundManager *sound_manager;
 void Game::Init()
@@ -37,7 +37,7 @@ void Game::Init()
     arrow_direction = new ArrowDirection();
     enemy_generator = new EnemyGenerator();
     map = new WorldMap();
-    shooter = new Shooter();
+    
     level_manager = new LevelManager();
     
     sound_manager = new SoundManager();
@@ -70,7 +70,7 @@ void Game::Update()
 
     level_manager->Update();
     player->stats_bar->Update();
-    shooter->Update();
+    
     
 }
 void Game::Render()
@@ -80,7 +80,7 @@ void Game::Render()
     map->RenderMap();
     
     player->Render();
-    shooter->Render();
+    
     enemy_generator->Render();
     
     player->stats_bar->Render();
@@ -276,7 +276,7 @@ void Game::Clean()
     delete arrow_direction;
     delete enemy_generator;
     delete level_manager;
-    delete shooter;
+    
    
     delete sound_manager;
 }
